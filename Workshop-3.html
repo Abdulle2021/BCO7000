@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-03-01" />
 
-<title>Workshop3-Rmarkdown</title>
+<title>Workshop3-Rmarkdown and workshop 4-data wrangling</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -359,7 +359,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Workshop3-Rmarkdown</h1>
+<h1 class="title toc-ignore">Workshop3-Rmarkdown and workshop 4-data
+wrangling</h1>
 <h4 class="author">Abdulle</h4>
 <h4 class="date">2022-03-01</h4>
 
@@ -368,26 +369,34 @@ pre code {
 
 <div id="data-wrangling" class="section level3">
 <h3>Data Wrangling</h3>
-<p>.```{r}</p>
-<p>#data loading</p>
-<p>data&lt;-read_csv(“<a href="https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-18/survey.csv" class="uri">https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-18/survey.csv</a>”)</p>
-<p>data%&gt;%head()</p>
+<p>.```{r} survey&lt;-read_csv(‘<a href="https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-18/survey.csv" class="uri">https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-18/survey.csv</a>’)</p>
+<p>country&lt;-survey %&gt;% distinct(country)</p>
+<p>survey%&gt;%count(country,sort=TRUE)</p>
+<p>survey%&gt;% filter( country==“United States” | country==“USA”|
+country==“US”| country==“US”| country==“U.S.”| country==“United States
+of America”| country==“Usa” )</p>
+<p>survey_short%&gt;%filter( annual_salary&gt;5000 &amp;
+gender==“women”</p>
+<p>)</p>
 <pre><code>
-##### R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;.
-
-
-[link](https://github.com/rstudio/cheatsheets/blob/main/rmarkdown-2.0.pdf)
-
-
-include some caculatio:
+###data loading
 
 
 
-```r
-2+2*6</code></pre>
+data&lt;-read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-18/survey.csv&quot;)
+
+data%&gt;%head()
+</code></pre>
+<div id="r-markdown" class="section level5">
+<h5>R Markdown</h5>
+<p>This is an R Markdown document. Markdown is a simple formatting
+syntax for authoring HTML, PDF, and MS Word documents. For more details
+on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p><a href="https://github.com/rstudio/cheatsheets/blob/main/rmarkdown-2.0.pdf">link</a></p>
+<p>include some caculatio:</p>
+<pre class="r"><code>2+2*6</code></pre>
 <pre><code>## [1] 14</code></pre>
+</div>
 </div>
 <div id="to-creat-a-coding-block-controloptioni" class="section level1">
 <h1>to creat a coding block” control+option+i</h1>

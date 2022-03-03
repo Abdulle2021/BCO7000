@@ -19,9 +19,9 @@ survey<-read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/
 country<-survey %>%
 distinct(country)
 
-survey%>%count(country,sort=TRUE)
+Survey%>%count(country,sort=TRUE)
 
-survey%>%
+survey_short<-survey%>%
    filter(
        country=="United States" |
            country=="USA"|
@@ -33,12 +33,14 @@ survey%>%
                )
 
 survey_short%>%filter(
-   annual_salary>5000 &
-     gender=="Woman"
+  annual_salary>50000 &
+    gender=="Woman"
 )
+
+
 survey_short%>%
  select(how_old_are_you,industry,annual_salary,gender)%>%
- filter(gender=="women")
+ filter(gender=="Woman")
 
 ```
 
